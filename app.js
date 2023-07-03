@@ -42,6 +42,19 @@ function loadLocal() {
     }
 }
 
+let count = 0;
+function counter() {
+    counterDOM.innerHTML = ++count
+    saveCounter();
+}
+function decreaseCounter() {
+    counterDOM.innerHTML = --count;
+    saveCounter();
+}
+function clearCounter() {
+    count = 0;
+    counterDOM.innerHTML = count;
+}
 
 
 
