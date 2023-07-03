@@ -5,6 +5,9 @@ const listDOM = document.getElementById('list');
 let counterDOM = document.querySelector('.counter');
 
 
+function saveCounter() {
+    localStorage.setItem('counter', count.toString());
+}
 
 
 function savelocal() {
