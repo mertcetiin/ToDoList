@@ -6,6 +6,45 @@ let counterDOM = document.querySelector('.counter');
 
 
 
+
+function savelocal() {
+    let todoListHtml = listDOM.innerHTML
+    localStorage.setItem('todoList', todoListHtml)
+};
+
+function loadLocal() {
+    const savedList = localStorage.getItem('todoList');
+    if (savedList) {
+        listDOM.innerHTML = savedList;
+
+        const deleteIcons = document.querySelectorAll('.fa-trash-can');
+        deleteIcons.forEach((deleteIcon) => {
+            deleteIcon.addEventListener('click', () => {
+                deleteIcon.parentNode.remove();
+                savelocal();
+                decreaseCounter()
+            });
+        });
+
+        const checkIcons = document.querySelectorAll('.fa-check');
+        checkIcons.forEach((checkIcon) => {
+            checkIcon.addEventListener('click', () => {
+                checkIcon.parentNode.style.textDecoration = 'line-through'
+                savelocal();
+            });
+        });
+
+        const savedCount = localStorage.getItem('counter');
+        if (savedCount) {
+            count = parseInt(savedCount);
+            counterDOM.innerHTML = count;
+        }
+    }
+}
+
+
+
+
 addDOM.addEventListener('click', () => {
     if (textDOM.value.trim() !== '') {
 
