@@ -8,6 +8,7 @@ Overview:
 # Installation
 
 ** open terminal
+
 git clone https://github.com/mertcetiin/ToDoList.git
 
 
