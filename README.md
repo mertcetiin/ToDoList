@@ -8,7 +8,7 @@ Overview:
 # Installation
 
 ** open terminal
-git clone 
+git clone https://github.com/mertcetiin/ToDoList.git
 
 
 # Starting project
